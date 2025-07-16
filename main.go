@@ -22,8 +22,8 @@ func main() {
 	probes := []Probe{
 		&TlsProbe{host: "1.1.1.1", port: 443, duration: 20 * time.Second},
 		&TlsProbe{host: "9.9.9.9", port: 443, duration: 40 * time.Second},
+		&DnsProbe{host: "sbb.ch", resolver: "1.1.1.1", duration: 25 * time.Second},
 	}
-
 	var wg sync.WaitGroup
 	wg.Add(len(probes))
 
